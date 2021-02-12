@@ -17,12 +17,9 @@ public class Programa {
         EntityManager em = emf.createEntityManager();
 
 
-        em.getTransaction().begin();
-        em.persist(p1);
-        em.persist(p2);
-        em.persist(p3);
-        em.persist(p4);
-        em.getTransaction().commit();
+        Pessoa p = em.find(Pessoa.class, 2);
+
+        System.out.println(p);
         em.close();
 
         System.out.println("Pronto!");
