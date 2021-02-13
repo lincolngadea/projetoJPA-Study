@@ -17,11 +17,11 @@ public class Programa {
         EntityManager em = emf.createEntityManager();
 
 
-        Pessoa p = em.find(Pessoa.class, 2);
-
-        System.out.println(p);
+        Pessoa p = em.find(Pessoa.class, 4);
+        em.getTransaction().begin();
+        em.remove(p);
+        em.getTransaction().commit();
         em.close();
-
         System.out.println("Pronto!");
 
     }
